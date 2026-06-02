@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<!-- saved from url=(0099)file:///C:/Users/LENOVO/Downloads/OmniClip%20-%20All-in-One%20Viral%20Reels%20Creator%20Studio.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OmniClip - All-in-One Viral Reels Creator Studio</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com/">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+  <link href="./omniclip app html document_files/css2" rel="stylesheet">
+  <!-- Lucide Icons -->
+  <script src="./omniclip app html document_files/lucide@latest"></script>
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="file:///C:/Users/LENOVO/AppData/Local/Temp/a849f389-a2ab-4aef-83b2-1300263f99ee_omniclip%20app%20html%20document.zip.9ee/style.css">
+</head>
+<body>
+  
+  <div class="workspace-container">
+    
+    <!-- Left Panel: Product Information & Instructions -->
+    <div class="info-sidebar">
+      <div class="logo-area">
+        <div class="logo-icon"><i data-lucide="zap"></i></div>
+        <h1>OmniClip</h1>
+      </div>
+      <p class="tagline">Viral Reels Creator Studio</p>
+      
+      <div class="features-list">
+        <div class="feature-item" data-tab="editor">
+          <div class="fi-icon"><i data-lucide="video"></i></div>
+          <div class="fi-text">
+            <h3>CapCut Video Editor</h3>
+            <p>Layered multi-track timeline with real-time CSS GPU filters and speed shifting.</p>
+          </div>
+        </div>
+        <div class="feature-item" data-tab="hooks">
+          <div class="fi-icon"><i data-lucide="sparkles"></i></div>
+          <div class="fi-text">
+            <h3>Viral Hook Engine</h3>
+            <p>Form-driven script ideas based on mood and target audience retention metrics.</p>
+          </div>
+        </div>
+        <div class="feature-item" data-tab="captions">
+          <div class="fi-icon"><i data-lucide="message-square"></i></div>
+          <div class="fi-text">
+            <h3>AI Caption Utility</h3>
+            <p>Tone control, emoji density scale, trending hashtags card, and structured copy-writing formats.</p>
+          </div>
+        </div>
+        <div class="feature-item" data-tab="templates">
+          <div class="fi-icon"><i data-lucide="layout"></i></div>
+          <div class="fi-text">
+            <h3>Viral Templates Grid</h3>
+            <p>Masonry feed featuring clip counts, duration overlays, and media syncing mechanics.</p>
+          </div>
+        </div>
+        <div class="feature-item" data-tab="profile">
+          <div class="fi-icon"><i data-lucide="instagram"></i></div>
+          <div class="fi-text">
+            <h3>Instagram Upload Studio</h3>
+            <p>User engagement profile, drop-zone file mockups, and live updating post grids.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="sidebar-footer">
+        <div class="badge"><span class="badge-dot"></span> State Isolation Active</div>
+        <p>Built with Vanilla HTML5, CSS3, and ES6 JavaScript. High-fidelity hardware-accelerated rendering.</p>
+      </div>
+    </div>
+    
+    <!-- Central Smartphone Device Frame -->
+    <div class="simulator-wrapper">
+      <div class="phone-case">
+        <!-- Physical Volume Buttons -->
+        <div class="phone-button vol-up"></div>
+        <div class="phone-button vol-down"></div>
+        <!-- Physical Power/Side Button -->
+        <div class="phone-button power"></div>
+        
+        <!-- Screen Bezel -->
+        <div class="screen-bezel">
+          <!-- Smartphone Screen Viewport (9:16 aspect ratio base) -->
+          <div class="screen-viewport">
+            
+            <!-- Dynamic Island Notch -->
+            <div class="dynamic-island">
+              <span class="island-camera"></span>
+              <span class="island-indicator"></span>
+            </div>
+            
+            <!-- Phone Top Status Bar -->
+            <div class="status-bar">
+              <div class="status-time" id="statusTime">12:00</div>
+              <div class="status-indicators">
+                <i data-lucide="signal" class="sb-icon"></i>
+                <i data-lucide="wifi" class="sb-icon"></i>
+                <div class="battery-wrapper">
+                  <span id="batteryPercentage">88%</span>
+                  <i data-lucide="battery" class="sb-icon"></i>
+                </div>
+              </div>
+            </div>
+            
+            <!-- NEW: Simulated Instagram-Style Header Bar -->
+            <div class="app-header-bar">
+              <div class="ah-logo"><i data-lucide="zap"></i> <span>OmniClip</span></div>
+              <div class="ah-actions">
+                <button class="ah-icon-btn" id="btnOpenDM" title="Direct Messages">
+                  <i data-lucide="send"></i>
+                  <span class="dm-unread-badge" id="dmUnreadBadge">1</span>
+                </button>
+              </div>
+            </div>
+            
+            <!-- Application Main Content Body -->
+            <main class="app-body">
+              
+              <!-- SUBAGENT 1: CAPCUT-STYLE VIDEO EDITOR TIMELINE -->
+              <section id="tab-editor" class="app-tab active">
+                <div class="editor-header">
+                  <span>OmniClip Timeline</span>
+                  <div class="editor-actions">
+                    <button class="icon-btn" id="btnPlayVideo"><i data-lucide="play" class="accent-icon"></i></button>
+                    <button class="primary-pill" id="btnExportVideo"><i data-lucide="download"></i> Export</button>
+                  </div>
+                </div>
+                
+                <!-- 9:16 Vertical Video Playback Area -->
+                <div class="preview-stage">
+                  <div class="video-preview-wrapper" id="videoWrapper">
+                    <!-- Creative Looping Simulated Video Layer -->
+                    <div class="video-content-simulated" id="videoSimulated">
+                      <div class="v-grid-particle"></div>
+                      <div class="v-caption-overlay" id="videoTextOverlay">✨ CREATE VIRAL REELS ✨</div>
+                      <div class="v-waveform-overlay"></div>
+                    </div>
+                    <!-- CSS Visual FX & Filter Badges -->
+                    <div class="active-fx-badge" id="activeFilterBadge">Original</div>
+                    <div class="playback-timer" id="playbackTimer">00:00.0 / 00:10.0</div>
+                    
+                    <!-- Sound Wave Visualizer Overlay when playing -->
+                    <div class="v-visualizer" id="soundVisualizer">
+                      <span></span><span></span><span></span><span></span><span></span>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Responsive Timeline Workspace -->
+                <div class="timeline-workspace">
+                  <!-- NEW: Timeline Control Bar with Audio Sync Toggle -->
+                  <div class="timeline-control-bar">
+                    <span class="timeline-status" id="timelineSyncStatus"><i data-lucide="music-2"></i> Track Sync inactive</span>
+                    <label class="toggle-switch">
+                      <input type="checkbox" id="chkAudioSync">
+                      <span class="slider"></span>
+                      <span class="toggle-label">⚡ Auto Audio Sync</span>
+                    </label>
+                  </div>
+                  
+                  <!-- Timeline Header / Time Ruler -->
+                  <div class="timeline-ruler" id="timelineRuler">
+                    <div class="ruler-line" style="left:0%;"><span>0s</span></div>
+                    <div class="ruler-line" style="left:20%;"><span>2s</span></div>
+                    <div class="ruler-line" style="left:40%;"><span>4s</span></div>
+                    <div class="ruler-line" style="left:60%;"><span>6s</span></div>
+                    <div class="ruler-line" style="left:80%;"><span>8s</span></div>
+                    <div class="ruler-line" style="left:100%;"><span>10s</span></div>
+                    
+                    <!-- Playhead Scrubber -->
+                    <div class="playhead-scrubber" id="playheadScrubber" style="left: 0%;"></div>
+                  </div>
+                  
+                  <!-- Layered Multi-Track stacked timelines -->
+                  <div class="timeline-tracks">
+                    <!-- Text Track Row -->
+                    <div class="track-row text-track" data-track-type="text">
+                      <div class="track-label"><i data-lucide="type"></i> Text</div>
+                      <div class="track-timeline-container">
+                        <div class="track-clip clip-text" style="left: 10%; width: 45%;" id="clipText1">✨ CREATE VIRAL REELS</div>
+                        <div class="track-clip clip-text" style="left: 60%; width: 35%;" id="clipText2">#OMNICLIP STUDIO</div>
+                      </div>
+                    </div>
+                    
+                    <!-- Video Track Row -->
+                    <div class="track-row video-track" data-track-type="video">
+                      <div class="track-label"><i data-lucide="video"></i> Video</div>
+                      <div class="track-timeline-container">
+                        <div class="track-clip clip-video" style="left: 0%; width: 100%;" id="clipVideoMain">
+                          <div class="clip-thumbnails">
+                            <span>🎞️</span><span>🎬</span><span>⚡</span><span>🌅</span>
+                          </div>
+                          <!-- Neon Beat Sync Markers (Cyan) -->
+                          <div class="sync-beat-marker" style="left: 25%;"><span class="marker-label">Beat 1</span></div>
+                          <div class="sync-beat-marker" style="left: 55%;"><span class="marker-label">Beat 2</span></div>
+                          <div class="sync-beat-marker" style="left: 85%;"><span class="marker-label">Beat 3</span></div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <!-- Audio Track Row -->
+                    <div class="track-row audio-track" data-track-type="audio">
+                      <div class="track-label"><i data-lucide="music"></i> Audio</div>
+                      <div class="track-timeline-container">
+                        <div class="track-clip clip-audio" style="left: 0%; width: 100%;" id="clipAudioMain">
+                          <span class="audio-wave">🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊🌊</span>
+                          <!-- Neon Beat Sync Markers (Cyan) -->
+                          <div class="sync-beat-marker" style="left: 25%;"><span class="marker-label">Drop 1</span></div>
+                          <div class="sync-beat-marker" style="left: 55%;"><span class="marker-label">Drop 2</span></div>
+                          <div class="sync-beat-marker" style="left: 85%;"><span class="marker-label">Drop 3</span></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <!-- Quick-Access Editor Tools Grid -->
+                  <div class="editor-quick-section">
+                    <div class="eq-tabs">
+                      <button class="eq-tab-btn active" data-eq-tab="filters" id="btnEqFilters">
+                        <i data-lucide="sliders"></i> Filters
+                      </button>
+                      <button class="eq-tab-btn" data-eq-tab="effects" id="btnEqEffects">
+                        <i data-lucide="sparkles"></i> Effects
+                      </button>
+                      <button class="eq-tab-btn" data-eq-tab="transitions" id="btnEqTransitions">
+                        <i data-lucide="combine"></i> Transitions
+                      </button>
+                    </div>
+                    
+                    <div class="eq-tray-scroller" id="quickTrayScroller">
+                      <!-- Populated dynamically via JavaScript -->
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Floating Toolbar -->
+                <div class="floating-toolbar-wrapper">
+                  <div class="floating-toolbar">
+                    <button class="toolbar-btn active-tool" data-tool="split" id="btnToolSplit">
+                      <i data-lucide="scissors"></i>
+                      <span>Split</span>
+                    </button>
+                    <button class="toolbar-btn" data-tool="speed" id="btnToolSpeed">
+                      <i data-lucide="gauge"></i>
+                      <span>Speed</span>
+                    </button>
+                    <button class="toolbar-btn" data-tool="animation" id="btnToolAnim">
+                      <i data-lucide="zap"></i>
+                      <span>Animation</span>
+                    </button>
+                    <button class="toolbar-btn" data-tool="effects" id="btnToolFX">
+                      <i data-lucide="sparkles"></i>
+                      <span>Effects</span>
+                    </button>
+                    <button class="toolbar-btn" data-tool="filters" id="btnToolFilters">
+                      <i data-lucide="sliders"></i>
+                      <span>Filters</span>
+                    </button>
+                  </div>
+                </div>
+                
+                <!-- Sliding Bottom Sheet Panels for Toolbar Actions -->
+                <div class="editor-bottom-sheet" id="editorBottomSheet">
+                  <div class="sheet-header">
+                    <h3 id="sheetTitle">Filters</h3>
+                    <button class="close-sheet-btn" id="btnCloseSheet"><i data-lucide="x"></i></button>
+                  </div>
+                  <div class="sheet-content" id="sheetContent">
+                    <!-- Dynamic panels populated via JavaScript -->
+                  </div>
+                </div>
+              </section>
+              
+              <!-- SUBAGENT 2: VIRAL HOOK GENERATOR ENGINE -->
+              <section id="tab-hooks" class="app-tab">
+                <div class="tab-scroll-container">
+                  <div class="section-title-wrapper">
+                    <h2>Hook Generator</h2>
+                    <p>Simulate creative logic for scroll-stopping Reels openings.</p>
+                  </div>
+                  
+                  <!-- Form Entry Module -->
+                  <div class="studio-card">
+                    <div class="form-group">
+                      <label for="hookTopic"><i data-lucide="hash"></i> Niche / Topic</label>
+                      <textarea id="hookTopic" placeholder="e.g., Passive Income for developers, morning coffee routine..." rows="3">Side Hustles for Software Engineers</textarea>
+                    </div>
+                    
+                    <div class="form-row">
+                      <div class="form-group flex-1">
+                        <label for="hookMood"><i data-lucide="smile"></i> Audience Mood</label>
+                        <select id="hookMood">
+                          <option value="Curious">Curious (Intrigued)</option>
+                          <option value="Challenged">Challenged (Provoked)</option>
+                          <option value="Hyped">Hyped (Motivated)</option>
+                        </select>
+                      </div>
+                      
+                      <div class="form-group flex-1">
+                        <label for="hookStyle"><i data-lucide="flame"></i> Hook Style</label>
+                        <select id="hookStyle">
+                          <option value="Controversial">Controversial</option>
+                          <option value="Storytelling">Storytelling</option>
+                          <option value="Behind-the-Scenes">Behind the Scenes</option>
+                        </select>
+                      </div>
+                    </div>
+                    
+                    <button class="primary-btn w-full" id="btnGenerateHooks">
+                      <i data-lucide="wand2"></i> Generate Hooks
+                    </button>
+                  </div>
+                  
+                  <!-- Generating Animation Block (hidden by default) -->
+                  <div class="loading-state hidden" id="hooksLoading">
+                    <div class="loading-spinner"></div>
+                    <p>Engine crafting hook variations...</p>
+                  </div>
+                  
+                  <!-- Hooks Output Section -->
+                  <div class="hooks-results-wrapper" id="hooksResults">
+                    <h3 class="output-heading">Scroll-Stopping Hooks</h3>
+                    <div class="hooks-grid" id="hooksGrid">
+                      <!-- Populated via Javascript -->
+                    </div>
+                    
+                    <!-- Visual Retention Analytics Card -->
+                    <div class="studio-card mt-6 hidden" id="retentionAnalyticsCard">
+                      <h3 class="analytics-title"><i data-lucide="line-chart"></i> AI Predicted Retention Analytics</h3>
+                      <div class="retention-graph-container">
+                        <!-- SVG Interactive Line Graph -->
+                        <svg viewBox="0 0 300 120" class="retention-svg" id="retentionSvg">
+                          <defs>
+                            <lineargradient id="gradientRetention" x1="0%" y1="0%" x2="0%" y2="100%">
+                              <stop offset="0%" stop-color="var(--primary-accent)" stop-opacity="0.4"></stop>
+                              <stop offset="100%" stop-color="var(--primary-accent)" stop-opacity="0"></stop>
+                            </lineargradient>
+                          </defs>
+                          <!-- Grid lines -->
+                          <line x1="0" y1="20" x2="300" y2="20" stroke="rgba(255,255,255,0.05)"></line>
+                          <line x1="0" y1="60" x2="300" y2="60" stroke="rgba(255,255,255,0.05)"></line>
+                          <line x1="0" y1="100" x2="300" y2="100" stroke="rgba(255,255,255,0.05)"></line>
+                          <!-- Line curve -->
+                          <path d="M 0,10 Q 30,80 80,75 T 180,60 T 300,55" fill="none" stroke="#8b5cf6" stroke-width="3" id="graphCurve"></path>
+                          <!-- Shaded area -->
+                          <path d="M 0,10 Q 30,80 80,75 T 180,60 T 300,55 L 300,120 L 0,120 Z" fill="url(#gradientRetention)"></path>
+                          <!-- Danger zone area marker -->
+                          <rect x="75" y="45" width="85" height="75" fill="rgba(239, 68, 68, 0.15)" stroke="rgba(239, 68, 68, 0.3)" stroke-dasharray="3,3"></rect>
+                        </svg>
+                        <!-- Flashing Red Danger Label overlay -->
+                        <div class="danger-label-pulsing">
+                          <span class="danger-dot"></span>
+                          <span>⚠️ Retention Danger Zone: Script Pacing Slows Down Here (15s - 32s)</span>
+                        </div>
+                      </div>
+                      <div class="analytics-metrics-row">
+                        <div class="am-metric">
+                          <span class="am-val">98%</span>
+                          <span class="am-lbl">Peak Hook Ret.</span>
+                        </div>
+                        <div class="am-metric">
+                          <span class="am-val" id="predictedAvgRet">64%</span>
+                          <span class="am-lbl">Avg. Retention</span>
+                        </div>
+                        <div class="am-metric">
+                          <span class="am-val" id="predictedViews">1.2M</span>
+                          <span class="am-lbl">Est. Reach</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              
+              <!-- SUBAGENT 3: AI CAPTION GENERATOR UTILITY -->
+              <section id="tab-captions" class="app-tab">
+                <div class="tab-scroll-container">
+                  <div class="section-title-wrapper">
+                    <h2>AI Caption Generator</h2>
+                    <p>Structure your raw thoughts into viral caption systems.</p>
+                  </div>
+                  
+                  <!-- Inputs Module -->
+                  <div class="studio-card">
+                    <!-- NEW: Reference Reel Section -->
+                    <div class="form-group">
+                      <label for="captionReference"><i data-lucide="link"></i> Reference Reel Link or Text</label>
+                      <div class="input-with-button">
+                        <input type="text" id="captionReference" placeholder="Paste competitor&#39;s viral reel link or transcript...">
+                        <button class="mini-upload-btn" id="btnExtractRef" title="Extract from reference video">
+                          <i data-lucide="music"></i>
+                          <span>Extract</span>
+                        </button>
+                      </div>
+                    </div>
+                    
+                    <div class="form-group">
+                      <label for="captionScript"><i data-lucide="edit-3"></i> Raw Script or Concepts</label>
+                      <textarea id="captionScript" placeholder="Paste your raw concepts or outline here..." rows="4">Coding tools are changing fast. Antigravity makes standard agents look slow. We built OmniClip in 10 minutes flat. Follow for more AI engineering builds.</textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                      <div class="slider-header">
+                        <label for="emojiSlider"><i data-lucide="smile"></i> Emoji Density</label>
+                        <span id="emojiVal">Viral Storm ⚡</span>
+                      </div>
+                      <input type="range" id="emojiSlider" min="1" max="3" value="3" class="custom-slider">
+                    </div>
+                    
+                    <div class="form-group">
+                      <label for="captionTone"><i data-lucide="music-4"></i> Tone of Voice</label>
+                      <select id="captionTone">
+                        <option value="Viral">Viral &amp; Bold</option>
+                        <option value="Aesthetic">Aesthetic Narrative</option>
+                        <option value="Growth">Growth Hack</option>
+                      </select>
+                    </div>
+                    
+                    <button class="primary-btn w-full" id="btnGenerateCaption">
+                      <i data-lucide="terminal"></i> Format Caption Structure
+                    </button>
+                  </div>
+                  
+                  <!-- Caption Loader -->
+                  <div class="loading-state hidden" id="captionLoading">
+                    <div class="loading-spinner"></div>
+                    <p>Styling caption structure...</p>
+                  </div>
+                  
+                  <!-- Caption Output -->
+                  <div class="caption-results-wrapper hidden" id="captionResults">
+                    <h3 class="output-heading">Structured Caption Output</h3>
+                    
+                    <!-- Structured Output Copy Card -->
+                    <div class="studio-card output-card relative">
+                      <div class="output-body" id="captionOutputText">
+                        <!-- Populated via Javascript -->
+                      </div>
+                      <button class="copy-float-btn" id="btnCopyCaption" title="Copy Caption">
+                        <i data-lucide="copy"></i>
+                      </button>
+                    </div>
+                    
+                    <!-- Trending Hashtags Separated Card -->
+                    <h3 class="output-heading mt-6">Trending Hashtag Set</h3>
+                    <div class="studio-card hashtag-card relative">
+                      <div class="hashtag-body" id="hashtagOutputText">
+                        #AiEngineering #WebDev #CapCutClone #CreativeCoding #SoftwareDeveloper #IndieHacker
+                      </div>
+                      <button class="copy-float-btn" id="btnCopyHashtags" title="Copy Hashtags">
+                        <i data-lucide="copy"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              
+              <!-- SUBAGENT 4: VIRAL REEL TEMPLATES GRID -->
+              <section id="tab-templates" class="app-tab">
+                <div class="tab-scroll-container">
+                  <div class="section-title-wrapper">
+                    <h2>Trending Templates</h2>
+                    <p>Sync your media instantly with current audio templates.</p>
+                  </div>
+                  
+                  <!-- Search bar -->
+                  <div class="search-wrapper">
+                    <i data-lucide="search" class="search-icon"></i>
+                    <input type="text" placeholder="Search trending songs &amp; styles..." class="search-input" id="templateSearch">
+                  </div>
+                  
+                  <!-- Templates Grid (2-Column Masonry) -->
+                  <div class="templates-grid" id="templatesGrid">
+                    <!-- Populated via JS -->
+                  </div>
+                </div>
+                
+                <!-- Sync Media Simulator Bottom Drawer -->
+                <div class="template-sync-drawer" id="templateSyncDrawer">
+                  <div class="drawer-drag-bar"></div>
+                  <div class="drawer-header">
+                    <h3>Sync Media to Template</h3>
+                    <button class="close-sheet-btn" id="btnCloseSyncDrawer"><i data-lucide="x"></i></button>
+                  </div>
+                  <div class="drawer-body">
+                    <div class="sync-audio-details">
+                      <i data-lucide="music" class="sync-music-icon animate-spin-slow"></i>
+                      <div>
+                        <h4 id="syncSongTitle">Neon Nights (Sped Up)</h4>
+                        <p id="syncSongDetails">Duration: 7.2s | Clips Required: 5</p>
+                      </div>
+                    </div>
+                    
+                    <div class="clip-slots-row" id="clipSlotsRow">
+                      <!-- Clips needed will be dynamically generated -->
+                    </div>
+                    
+                    <button class="primary-btn w-full mt-6" id="btnConfirmSync">
+                      <i data-lucide="sparkles"></i> Apply &amp; Sync Clips to editor
+                    </button>
+                  </div>
+                </div>
+              </section>
+              
+              <!-- SUBAGENT 5: INSTAGRAM-STYLE PROFILE & UPLOAD LOGIC -->
+              <section id="tab-profile" class="app-tab">
+                <div class="tab-scroll-container">
+                  
+                  <!-- Top Area: Instagram-Style Creator Header -->
+                  <div class="profile-header">
+                    <div class="profile-row">
+                      <div class="profile-avatar-wrapper">
+                        <div class="profile-avatar">OC</div>
+                        <span class="active-pulse"></span>
+                      </div>
+                      
+                      <div class="profile-stats">
+                        <div class="stat-box">
+                          <span class="stat-num" id="postsCount">12</span>
+                          <span class="stat-lbl">Posts</span>
+                        </div>
+                        <div class="stat-box" id="btnFollowers" style="cursor: pointer;">
+                          <span class="stat-num" id="followersCount">48.2K</span>
+                          <span class="stat-lbl">Followers</span>
+                        </div>
+                        <div class="stat-box" id="btnFollowing" style="cursor: pointer;">
+                          <span class="stat-num" id="followingCount">840</span>
+                          <span class="stat-lbl">Following</span>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div class="profile-info">
+                      <div class="profile-info-header">
+                        <h3>OmniClip Studio 🎬</h3>
+                        <button class="icon-btn-small" id="btnOpenSettings" title="Settings">
+                          <i data-lucide="settings"></i>
+                        </button>
+                      </div>
+                      <p>Building short-form mobile reels. <span class="engagement-pill">Engagement: 14.8%</span></p>
+                      <a href="file:///C:/Users/LENOVO/AppData/Local/Temp/a849f389-a2ab-4aef-83b2-1300263f99ee_omniclip%20app%20html%20document.zip.9ee/omniclip%20app%20html%20document.html#" class="profile-link">omniclip.ai/studio</a>
+                    </div>
+                  </div>
+                  
+                  <!-- Middle Sandbox: Drag-and-Drop Video Upload Drop-Zone -->
+                  <div class="upload-sandbox-container">
+                    <div class="sandbox-title">Upload Reel Draft</div>
+                    
+                    <!-- Default Drop Zone -->
+                    <div class="upload-dropzone" id="uploadDropzone">
+                      <input type="file" id="mediaFileInput" accept="video/*,image/*" style="display:none;">
+                      <div class="dz-content">
+                        <i data-lucide="cloud-upload" class="dz-icon"></i>
+                        <h4>Drag &amp; Drop short video</h4>
+                        <p>Or tap to browse simulator drive</p>
+                        <span class="file-size-badge">Max 50MB</span>
+                      </div>
+                    </div>
+                    
+                    <!-- Side-by-side Video Preview & Caption Input Sheet -->
+                    <div class="upload-active-sheet hidden" id="uploadActiveSheet">
+                      <div class="side-by-side-pane">
+                        <!-- Left pane: Preview video -->
+                        <div class="preview-mini-pane">
+                          <div class="mini-video-simulated" id="miniVideoSimulated">
+                            <span class="mini-tag">Preview</span>
+                          </div>
+                          <div class="mini-video-filename" id="uploadedFilename">my_cool_footage.mp4</div>
+                        </div>
+                        
+                        <!-- Right pane: Input sheets -->
+                        <div class="form-mini-pane">
+                          <div class="form-group mb-3">
+                            <label for="reviewCaption"><i data-lucide="message-square"></i> Review Caption</label>
+                            <textarea id="reviewCaption" rows="4" placeholder="Caption for your Reel..."></textarea>
+                          </div>
+                          
+                          <!-- Smart Teleprompter Toggle Button -->
+                          <div class="form-group mb-3">
+                            <button class="teleprompter-btn w-full" id="btnOpenTeleprompter">
+                              <i data-lucide="tv"></i> 📱 Open Video Teleprompter Mode
+                            </button>
+                          </div>
+                          
+                          <div class="form-group mb-3">
+                            <label for="altText"><i data-lucide="accessibility"></i> Accessibility Alt Text</label>
+                            <input type="text" id="altText" placeholder="Describe this video for readers..." value="A dynamic modern software engineer reel with a glowing visual environment.">
+                          </div>
+                          
+                          <div class="button-row">
+                            <button class="secondary-btn flex-1" id="btnCancelUpload">Clear</button>
+                            <button class="primary-btn flex-2" id="btnShareReel"><i data-lucide="send"></i> Share Draft</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <!-- Bottom Area: 3-Column togglable post grids -->
+                  <div class="profile-feed-section">
+                    <div class="feed-tabs">
+                      <button class="feed-tab-btn active" data-feed="posts" id="btnFeedPosts">
+                        <i data-lucide="grid" class="tab-icon"></i> Posts
+                      </button>
+                      <button class="feed-tab-btn" data-feed="drafts" id="btnFeedDrafts">
+                        <i data-lucide="film" class="tab-icon"></i> Drafts
+                      </button>
+                    </div>
+                    
+                    <!-- Feed Content Grid (3-columns) -->
+                    <div class="feed-grid" id="feedGrid">
+                      <!-- Grid items populated dynamically -->
+                    </div>
+                  </div>
+                  
+                </div>
+              </section>
+              
+            </main>
+            
+            <!-- Sticky Bottom Navigation Layout -->
+            <nav class="bottom-nav">
+              <button class="nav-item active" data-tab="editor">
+                <i data-lucide="film"></i>
+                <span>Editor</span>
+              </button>
+              <button class="nav-item" data-tab="hooks">
+                <i data-lucide="sparkles"></i>
+                <span>Hooks</span>
+              </button>
+              <button class="nav-item" data-tab="captions">
+                <i data-lucide="message-square"></i>
+                <span>Captions</span>
+              </button>
+              <button class="nav-item" data-tab="templates">
+                <i data-lucide="layout"></i>
+                <span>Templates</span>
+              </button>
+              <button class="nav-item" data-tab="profile">
+                <i data-lucide="user"></i>
+                <span>Profile</span>
+              </button>
+            </nav>
+            
+            <!-- Dynamic Toast Notifier -->
+            <div class="toast-notification" id="toastNotification">
+              <span id="toastText">Action Successful!</span>
+            </div>
+            
+            <!-- Smartphone Front Camera Teleprompter Overlay Modal -->
+            <div class="teleprompter-modal" id="teleprompterModal">
+              <div class="tp-camera-simulation">
+                <!-- Mock Camera Notch/Outline overlay -->
+                <div class="tp-notch"></div>
+                <!-- Running visual dots -->
+                <div class="tp-rec-indicator" id="tpRecIndicator">
+                  <span class="rec-dot"></span> REC
+                </div>
+                
+                <!-- Teleprompter Script Area scrolling upwards -->
+                <div class="tp-scroll-window">
+                  <div class="tp-scroll-text" id="tpScrollText">
+                    🏆 THE NEXT BIG SHIFT IS HERE ⚡🚀🔥
+                    
+                    Coding tools are changing fast. Antigravity makes standard agents look slow. We built OmniClip in 10 minutes flat. Follow for more AI engineering builds.
+                    
+                    👇 Drop your thoughts below and hit that save button!
+                  </div>
+                </div>
+                
+                <!-- Overlay Captions simulation -->
+                <div class="tp-stylized-captions hidden" id="tpStylizedCaptions">
+                  <span class="caption-word pulse">⚡</span>
+                  <span class="caption-word pulse">OMNICLIP</span>
+                  <span class="caption-word pulse">VELOCITY!</span>
+                </div>
+                
+                <!-- Prompter Controls Console -->
+                <div class="tp-controls-console">
+                  <div class="tp-console-row">
+                    <label class="checkbox-wrapper">
+                      <input type="checkbox" id="chkAutoCaptions" checked="">
+                      <span class="checkmark"></span>
+                      <span class="chk-lbl">Bouncing Stylized Captions</span>
+                    </label>
+                  </div>
+                  
+                  <div class="tp-console-row">
+                    <div class="slider-group">
+                      <span>Speed:</span>
+                      <input type="range" id="tpSpeedSlider" min="1" max="5" value="2" class="console-slider">
+                      <span id="tpSpeedVal">2x</span>
+                    </div>
+                  </div>
+                  
+                  <div class="tp-button-row">
+                    <button class="tp-control-btn btn-record" id="btnTpRecord"><i data-lucide="circle"></i> Start Rec</button>
+                    <button class="tp-control-btn btn-close-tp" id="btnTpClose">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Instagram Settings Drawer Modal -->
+            <div class="settings-modal" id="settingsModal">
+              <div class="settings-container">
+                <div class="settings-header">
+                  <button class="settings-back-btn" id="btnSettingsBack"><i data-lucide="chevron-left"></i></button>
+                  <h3 id="settingsTitle">Settings and Privacy</h3>
+                  <button class="settings-close-btn" id="btnSettingsClose"><i data-lucide="x"></i></button>
+                </div>
+                
+                <!-- Main Index View -->
+                <div class="settings-content" id="settingsIndexView">
+                  <div class="settings-search">
+                    <i data-lucide="search"></i>
+                    <input type="text" placeholder="Search settings...">
+                  </div>
+                  
+                  <div class="settings-section-title">Your Account</div>
+                  <div class="settings-item" data-submenu="account-center">
+                    <div class="si-left"><i data-lucide="user-check"></i> <span>Account Center</span></div>
+                    <i data-lucide="chevron-right" class="si-chevron"></i>
+                  </div>
+                  <div class="settings-item" data-submenu="professional-dashboard">
+                    <div class="si-left"><i data-lucide="line-chart"></i> <span class="text-accent-violet">Professional Dashboard &amp; Analytics</span></div>
+                    <i data-lucide="chevron-right" class="si-chevron"></i>
+                  </div>
+                  <div class="settings-item" data-submenu="seo-optimization">
+                    <div class="si-left"><i data-lucide="globe"></i> <span class="text-accent-cyan">SEO Optimization &amp; Keywords</span></div>
+                    <i data-lucide="chevron-right" class="si-chevron"></i>
+                  </div>
+                  
+                  <div class="settings-section-title">How you use OmniClip</div>
+                  <div class="settings-item" data-submenu="notifications">
+                    <div class="si-left"><i data-lucide="bell"></i> <span>Notifications</span></div>
+                    <i data-lucide="chevron-right" class="si-chevron"></i>
+                  </div>
+                  <div class="settings-item" data-submenu="time-spent">
+                    <div class="si-left"><i data-lucide="clock"></i> <span>Time Spent</span></div>
+                    <i data-lucide="chevron-right" class="si-chevron"></i>
+                  </div>
+                  
+                  <div class="settings-section-title">Who can see your content</div>
+                  <div class="settings-item" data-submenu="privacy">
+                    <div class="si-left"><i data-lucide="lock"></i> <span>Account Privacy</span></div>
+                    <i data-lucide="chevron-right" class="si-chevron"></i>
+                  </div>
+                  <div class="settings-item" data-submenu="blocked">
+                    <div class="si-left"><i data-lucide="ban"></i> <span>Blocked Accounts</span></div>
+                    <i data-lucide="chevron-right" class="si-chevron"></i>
+                  </div>
+                  
+                  <div class="settings-section-title">How others can interact with you</div>
+                  <div class="settings-item" data-submenu="messages">
+                    <div class="si-left"><i data-lucide="message-circle"></i> <span>Messages and story replies</span></div>
+                    <i data-lucide="chevron-right" class="si-chevron"></i>
+                  </div>
+                  <div class="settings-item" data-submenu="comments">
+                    <div class="si-left"><i data-lucide="message-square"></i> <span>Comments</span></div>
+                    <i data-lucide="chevron-right" class="si-chevron"></i>
+                  </div>
+                  <div class="settings-item" data-submenu="tags-mentions">
+                    <div class="si-left"><i data-lucide="at-sign"></i> <span>Tags and mentions</span></div>
+                    <i data-lucide="chevron-right" class="si-chevron"></i>
+                  </div>
+                  
+                  <div class="settings-section-title">Your app and media</div>
+                  <div class="settings-item" data-submenu="data-usage">
+                    <div class="si-left"><i data-lucide="hard-drive"></i> <span>Data Usage and Media Quality</span></div>
+                    <i data-lucide="chevron-right" class="si-chevron"></i>
+                  </div>
+                  <div class="settings-item" data-submenu="language">
+                    <div class="si-left"><i data-lucide="languages"></i> <span>Language</span></div>
+                    <i data-lucide="chevron-right" class="si-chevron"></i>
+                  </div>
+                  
+                  <div class="settings-footer">
+                    <button class="settings-logout-btn" id="btnSettingsLoginModal">🔐 Log In / Auth Panel</button>
+                    <p>OmniClip Version 2.8.5-dev</p>
+                  </div>
+                </div>
+                
+                <!-- Submenu Dynamic View Container -->
+                <div class="settings-content hidden" id="settingsSubmenuView">
+                  <!-- Populated via JavaScript dynamically -->
+                </div>
+              </div>
+            </div>
+            
+            <!-- Multi-Channel Authentication Expansion Modal -->
+            <div class="settings-modal" id="loginModal">
+              <div class="settings-container">
+                <div class="settings-header">
+                  <h3 style="margin-left:auto; margin-right:auto">Sign in to OmniClip</h3>
+                  <button class="settings-close-btn" id="btnAuthClose"><i data-lucide="x"></i></button>
+                </div>
+                <div class="auth-modal-content">
+                  <div class="auth-tabs">
+                    <button class="auth-tab-btn active" id="btnAuthPhone">Phone Number</button>
+                    <button class="auth-tab-btn" id="btnAuthEmail">Email / Username</button>
+                  </div>
+                  
+                  <!-- Dynamic Input Form -->
+                  <div class="form-group mt-4" id="authInputGroup">
+                    <label id="lblAuthInput"><i data-lucide="phone"></i> Phone Number</label>
+                    <input type="text" id="txtAuthInput" placeholder="+1 (555) 019-2834">
+                  </div>
+                  
+                  <div class="form-group">
+                    <label><i data-lucide="key"></i> Password</label>
+                    <input type="password" id="txtAuthPassword" placeholder="••••••••" style="width:100%; background-color:rgba(0,0,0,0.4); border:1px solid var(--border-color); border-radius:10px; padding:10px 12px; color:#fff">
+                  </div>
+                  
+                  <button class="primary-btn w-full mt-4" id="btnConfirmLogin">
+                    <i data-lucide="log-in"></i> Sign In to Studio
+                  </button>
+                  
+                  <div class="auth-divider"><span>OR</span></div>
+                  
+                  <!-- Third-Party Access OAuth Buttons -->
+                  <button class="oauth-btn btn-google" id="btnOauthGoogle">
+                    <span class="oauth-icon">G</span>
+                    <span>Continue with Google</span>
+                  </button>
+                  
+                  <button class="oauth-btn btn-instagram" id="btnOauthInstagram">
+                    <i data-lucide="instagram"></i>
+                    <span>Continue with Instagram</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Real-Time Direct Messaging (DM) Interactive Hub -->
+            <div class="teleprompter-modal" id="dmHubModal">
+              <div class="dm-hub-container">
+                <div class="dm-hub-header">
+                  <button class="settings-back-btn" id="btnDmClose"><i data-lucide="chevron-left"></i></button>
+                  <h3>Direct Messages</h3>
+                  <i data-lucide="edit" style="width:16px; height:16px; margin-left:auto; color:var(--text-muted)"></i>
+                </div>
+                
+                <!-- Two-Column Split Interface -->
+                <div class="dm-split-body">
+                  <!-- Left column: Threads (35% width) -->
+                  <div class="dm-threads-col">
+                    <div class="dm-thread-item active" data-thread-user="IndieHacker_Jen">
+                      <div class="dm-thread-avatar">JH</div>
+                      <div class="dm-thread-details">
+                        <div class="dm-thread-name">Jen Hacker <span class="active-dot"></span></div>
+                        <div class="dm-thread-preview">Your timeline splits are sick!</div>
+                      </div>
+                      <span class="dm-badge-unread"></span>
+                    </div>
+                    <div class="dm-thread-item" data-thread-user="AestheticCreator">
+                      <div class="dm-thread-avatar bg-gradient-pink">AC</div>
+                      <div class="dm-thread-details">
+                        <div class="dm-thread-name">Aesthetic C.</div>
+                        <div class="dm-thread-preview">Wanna sync audio tracks?</div>
+                      </div>
+                    </div>
+                    <div class="dm-thread-item" data-thread-user="CapCutGuru">
+                      <div class="dm-thread-avatar bg-gradient-green">CG</div>
+                      <div class="dm-thread-details">
+                        <div class="dm-thread-name">CapCut Guru</div>
+                        <div class="dm-thread-preview">Check out my new presets.</div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <!-- Right column: Active Chat box (65% width) -->
+                  <div class="dm-chat-col">
+                    <div class="dm-chat-header">
+                      <span class="dm-active-user-name" id="dmActiveUserName">Jen Hacker</span>
+                      <span class="dm-active-user-status">Active Now</span>
+                    </div>
+                    
+                    <div class="dm-chat-messages" id="dmChatMessages">
+                      <div class="dm-msg msg-received">
+                        <p>Hey! Loved your templates grid.</p>
+                        <span class="msg-time">10:20 AM</span>
+                      </div>
+                      <div class="dm-msg msg-sent">
+                        <p>Thanks! I built it in vanilla JS.</p>
+                        <span class="msg-time">10:22 AM</span>
+                      </div>
+                      <div class="dm-msg msg-received">
+                        <p>Your timeline splits are sick!</p>
+                        <span class="msg-time">10:23 AM</span>
+                      </div>
+                    </div>
+                    
+                    <!-- Sticky bottom message composition bar -->
+                    <div class="dm-chat-input-bar">
+                      <button class="dm-input-icon" id="btnDmAttach"><i data-lucide="paperclip"></i></button>
+                      <input type="text" id="txtDmInput" placeholder="Message...">
+                      <button class="dm-input-icon" id="btnDmEmoji"><i data-lucide="smile"></i></button>
+                      <button class="dm-send-btn" id="btnDmSend"><i data-lucide="send"></i></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Social Network Layer Followers/Following Modal -->
+            <div class="settings-modal" id="socialModal">
+              <div class="settings-container">
+                <div class="settings-header">
+                  <button class="settings-back-btn" id="btnSocialClose"><i data-lucide="chevron-left"></i></button>
+                  <h3 id="socialModalTitle">Accounts</h3>
+                </div>
+                
+                <div class="social-tabs">
+                  <button class="social-tab-btn active" id="btnTabFollowers">Followers (<span id="countFollowersTab">48.2K</span>)</button>
+                  <button class="social-tab-btn" id="btnTabFollowing">Following (<span id="countFollowingTab">840</span>)</button>
+                </div>
+                
+                <!-- Social List Container -->
+                <div class="social-list-container" id="socialListContainer">
+                  <!-- Populated via Javascript dynamically -->
+                </div>
+              </div>
+            </div>
+
+            <!-- Home Bar Indicator Overlay -->
+            <div class="home-indicator"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+  <!-- Scripts -->
+  <script src="file:///C:/Users/LENOVO/AppData/Local/Temp/a849f389-a2ab-4aef-83b2-1300263f99ee_omniclip%20app%20html%20document.zip.9ee/app.js"></script>
+
+
+</body></html>
