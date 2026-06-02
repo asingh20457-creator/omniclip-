@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OmniClip - All-in-One Viral Reels Creator Studio</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com/">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Inline Stylesheet -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg-primary: #0a0e27;
+      --bg-secondary: #1a1f3a;
+      --border-color: #2d3748;
+      --text-primary: #ffffff;
+      --text-muted: #a0aec0;
+      --primary-accent: #8b5cf6;
+      --accent-cyan: #06b6d4;
+      --accent-pink: #ec4899;
+      --accent-green: #10b981;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+      overflow: hidden;
+    }
+
+    .workspace-container {
+      display: flex;
+      height: 100vh;
+      background-color: var(--bg-primary);
+    }
+
+    .info-sidebar {
+      width: 280px;
+      background-color: var(--bg-secondary);
+      padding: 24px;
+      overflow-y: auto;
+      border-right: 1px solid var(--border-color);
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+
+    .logo-icon {
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, var(--primary-accent), var(--accent-cyan));
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+    }
+
+    .logo-area h1 {
+      font-size: 24px;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--primary-accent), var(--accent-cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .tagline {
+      color: var(--text-muted);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 24px;
+    }
+
+    .features-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    .feature-item {
+      display: flex;
+      gap: 12px;
+      padding: 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: 1px solid transparent;
+    }
+
+    .feature-item:hover {
+      background-color: rgba(139, 92, 246, 0.1);
+      border-color: var(--primary-accent);
+    }
+
+    .fi-icon {
+      width: 24px;
+      height: 24px;
+      color: var(--primary-accent);
+      flex-shrink: 0;
+    }
+
+    .fi-text h3 {
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .fi-text p {
+      font-size: 11px;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    .sidebar-footer {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 10px;
+      padding: 6px 8px;
+      background-color: rgba(16, 185, 129, 0.1);
+      border: 1px solid var(--accent-green);
+      border-radius: 4px;
+      margin-bottom: 12px;
+      color: var(--accent-green);
+    }
+
+    .badge-dot {
+      width: 6px;
+      height: 6px;
+      background-color: var(--accent-green);
+      border-radius: 50%;
+    }
+
+    .sidebar-footer p {
+      font-size: 11px;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    .simulator-wrapper {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: linear-gradient(135deg, var(--bg-primary) 0%, rgba(139, 92, 246, 0.05) 100%);
+    }
+
+    .phone-case {
+      width: 280px;
+      aspect-ratio: 9/16;
+      background-color: #1a1a1a;
+      border-radius: 40px;
+      padding: 12px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.9), inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .phone-button {
+      position: absolute;
+      background-color: #2a2a2a;
+      border-radius: 3px;
+    }
+
+    .vol-up { width: 3px; height: 35px; right: -6px; top: 80px; }
+    .vol-down { width: 3px; height: 35px; right: -6px; top: 125px; }
+    .power { width: 3px; height: 50px; right: -6px; bottom: 150px; }
+
+    .screen-bezel {
+      flex: 1;
+      background: var(--bg-primary);
+      border-radius: 35px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .screen-viewport {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      background: var(--bg-primary);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .dynamic-island {
+      position: absolute;
+      top: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120px;
+      height: 28px;
+      background: #1a1a1a;
+      border-radius: 12px;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .island-camera {
+      width: 8px;
+      height: 8px;
+      background: #333;
+      border-radius: 50%;
+    }
+
+    .island-indicator {
+      width: 4px;
+      height: 4px;
+      background: var(--accent-green);
+      border-radius: 50%;
+    }
+
+    .status-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 6px 12px;
+      margin-top: 32px;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .status-indicators {
+      display: flex;
+      gap: 4px;
+      align-items: center;
+    }
+
+    .sb-icon {
+      width: 12px;
+      height: 12px;
+    }
+
+    .battery-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .app-header-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .ah-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .ah-icon-btn {
+      position: relative;
+      background: none;
+      border: none;
+      color: var(--text-primary);
+      cursor: pointer;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .dm-unread-badge {
+      position: absolute;
+      top: -2px;
+      right: -2px;
+      width: 16px;
+      height: 16px;
+      background: var(--accent-pink);
+      border-radius: 50%;
+      font-size: 9px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 600;
+    }
+
+    .app-body {
+      flex: 1;
+      overflow-y: auto;
+      padding-bottom: 60px;
+    }
+
+    .app-tab {
+      display: none;
+    }
+
+    .app-tab.active {
+      display: block;
+    }
+
+    .app-tab > div {
+      padding: 16px;
+    }
+
+    .section-title-wrapper {
+      margin-bottom: 16px;
+    }
+
+    .section-title-wrapper h2 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .section-title-wrapper p {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .studio-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 16px;
+    }
+
+    .form-group {
+      margin-bottom: 12px;
+    }
+
+    .form-group label {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 500;
+      margin-bottom: 6px;
+      color: var(--text-primary);
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 8px 10px;
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      color: var(--text-primary);
+      font-family: inherit;
+      font-size: 12px;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: var(--primary-accent);
+      background: rgba(139, 92, 246, 0.1);
+    }
+
+    .primary-btn {
+      width: 100%;
+      padding: 10px 16px;
+      background: linear-gradient(135deg, var(--primary-accent), var(--accent-cyan));
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-weight: 600;
+      font-size: 13px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .primary-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(139, 92, 246, 0.3);
+    }
+
+    .bottom-nav {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      background: var(--bg-secondary);
+      border-top: 1px solid var(--border-color);
+      height: 60px;
+    }
+
+    .nav-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      font-size: 10px;
+      transition: all 0.3s ease;
+      flex: 1;
+    }
+
+    .nav-item.active {
+      color: var(--primary-accent);
+    }
+
+    .nav-item svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .home-indicator {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120px;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 2px;
+      margin-bottom: 2px;
+    }
+
+    /* Scrollbar Styling */
+    .app-body::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    .app-body::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .app-body::-webkit-scrollbar-thumb {
+      background: var(--border-color);
+      border-radius: 2px;
+    }
+
+    .app-body::-webkit-scrollbar-thumb:hover {
+      background: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+  
+  <div class="workspace-container">
+    
+    <!-- Left Panel: Product Information & Instructions -->
+    <div class="info-sidebar">
+      <div class="logo-area">
+        <div class="logo-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg></div>
+        <h1>OmniClip</h1>
+      </div>
+      <p class="tagline">Viral Reels Creator Studio</p>
+      
+      <div class="features-list">
+        <div class="feature-item" data-tab="editor">
+          <div class="fi-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg></div>
+          <div class="fi-text">
+            <h3>Video Editor</h3>
+            <p>Multi-track timeline with filters and effects.</p>
+          </div>
+        </div>
+        <div class="feature-item" data-tab="hooks">
+          <div class="fi-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.21 15.89A10 10 0 1 0 8.11 2.69"></path></svg></div>
+          <div class="fi-text">
+            <h3>Hook Generator</h3>
+            <p>AI-powered viral script ideas.</p>
+          </div>
+        </div>
+        <div class="feature-item" data-tab="captions">
+          <div class="fi-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></div>
+          <div class="fi-text">
+            <h3>AI Captions</h3>
+            <p>Auto-generate trending captions.</p>
+          </div>
+        </div>
+        <div class="feature-item" data-tab="templates">
+          <div class="fi-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg></div>
+          <div class="fi-text">
+            <h3>Templates</h3>
+            <p>Trending reel templates.</p>
+          </div>
+        </div>
+        <div class="feature-item" data-tab="profile">
+          <div class="fi-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="1"></circle><path d="M12 1v6m6.66-1.34l-4.24 4.24m1.34 6.66h-6m-4.24-4.24L1 12m6-6.66l4.24 4.24"></path></svg></div>
+          <div class="fi-text">
+            <h3>Profile</h3>
+            <p>Upload and share your reels.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="sidebar-footer">
+        <div class="badge"><span class="badge-dot"></span> Active</div>
+        <p>Built with Vanilla HTML5, CSS3, and ES6 JavaScript.</p>
+      </div>
+    </div>
+    
+    <!-- Central Smartphone Device Frame -->
+    <div class="simulator-wrapper">
+      <div class="phone-case">
+        <!-- Physical Volume Buttons -->
+        <div class="phone-button vol-up"></div>
+        <div class="phone-button vol-down"></div>
+        <!-- Physical Power/Side Button -->
+        <div class="phone-button power"></div>
+        
+        <!-- Screen Bezel -->
+        <div class="screen-bezel">
+          <!-- Smartphone Screen Viewport -->
+          <div class="screen-viewport">
+            
+            <!-- Dynamic Island Notch -->
+            <div class="dynamic-island">
+              <span class="island-camera"></span>
+              <span class="island-indicator"></span>
+            </div>
+            
+            <!-- Phone Top Status Bar -->
+            <div class="status-bar">
+              <div class="status-time" id="statusTime">12:00</div>
+              <div class="status-indicators">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="sb-icon"><polyline points="23 7 16 12 23 17 23 7"></polyline></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="sb-icon"><circle cx="12" cy="12" r="1"></circle><path d="M19.07 4.93A10 10 0 0 0 5.64 19.36"></path></svg>
+                <div class="battery-wrapper">
+                  <span id="batteryPercentage">88%</span>
+                </div>
+              </div>
+            </div>
+            
+            <!-- App Header Bar -->
+            <div class="app-header-bar">
+              <div class="ah-logo"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg> <span>OmniClip</span></div>
+              <div class="ah-actions">
+                <button class="ah-icon-btn" id="btnOpenDM" title="Direct Messages">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                  <span class="dm-unread-badge" id="dmUnreadBadge">1</span>
+                </button>
+              </div>
+            </div>
+            
+            <!-- Application Main Content Body -->
+            <main class="app-body">
+              
+              <!-- EDITOR TAB -->
+              <section id="tab-editor" class="app-tab active">
+                <div>
+                  <div class="section-title-wrapper">
+                    <h2>OmniClip Timeline</h2>
+                    <p>Edit your videos with precision</p>
+                  </div>
+                  
+                  <div class="studio-card">
+                    <h3 style="font-size: 14px; margin-bottom: 12px;">Video Preview</h3>
+                    <div style="width: 100%; aspect-ratio: 9/16; background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(6, 182, 212, 0.2)); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px;">
+                      <span style="text-align: center;">
+                        <p style="font-size: 12px; margin-bottom: 8px;">✨ CREATE VIRAL REELS ✨</p>
+                        <p style="font-size: 10px; color: var(--text-muted);">Your video appears here</p>
+                      </span>
+                    </div>
+                    <button class="primary-btn">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8 10 1 17"></polyline></svg>
+                      Play Video
+                    </button>
+                  </div>
+                </div>
+              </section>
+              
+              <!-- HOOKS TAB -->
+              <section id="tab-hooks" class="app-tab">
+                <div>
+                  <div class="section-title-wrapper">
+                    <h2>Hook Generator</h2>
+                    <p>Create scroll-stopping hooks</p>
+                  </div>
+                  
+                  <div class="studio-card">
+                    <div class="form-group">
+                      <label><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle></svg> Topic</label>
+                      <input type="text" placeholder="E.g., Side Hustles for Developers..." value="Side Hustles for Software Engineers">
+                    </div>
+                    
+                    <div class="form-group">
+                      <label><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="1"></circle><path d="M12 1v6"></path></svg> Mood</label>
+                      <select>
+                        <option>Curious (Intrigued)</option>
+                        <option>Challenged (Provoked)</option>
+                        <option>Hyped (Motivated)</option>
+                      </select>
+                    </div>
+                    
+                    <button class="primary-btn">Generate Hooks</button>
+                  </div>
+                </div>
+              </section>
+              
+              <!-- CAPTIONS TAB -->
+              <section id="tab-captions" class="app-tab">
+                <div>
+                  <div class="section-title-wrapper">
+                    <h2>AI Caption Generator</h2>
+                    <p>Format captions for virality</p>
+                  </div>
+                  
+                  <div class="studio-card">
+                    <div class="form-group">
+                      <label><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 7 4 4 20 4 20 7"></polyline></svg> Raw Script</label>
+                      <textarea rows="3" placeholder="Paste your script here...">Coding tools are changing fast. OmniClip makes editing super fast. Drop a like if you agree!</textarea>
+                    </div>
+                    
+                    <button class="primary-btn">Format Caption</button>
+                  </div>
+                </div>
+              </section>
+              
+              <!-- TEMPLATES TAB -->
+              <section id="tab-templates" class="app-tab">
+                <div>
+                  <div class="section-title-wrapper">
+                    <h2>Trending Templates</h2>
+                    <p>Sync media with trending audio</p>
+                  </div>
+                  
+                  <div class="studio-card">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+                      <div style="background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(6, 182, 212, 0.2)); border-radius: 8px; padding: 12px; text-align: center;">
+                        <p style="font-size: 14px; margin-bottom: 4px;">🎵</p>
+                        <p style="font-size: 11px;">Neon Nights</p>
+                      </div>
+                      <div style="background: linear-gradient(135deg, rgba(236, 72, 153, 0.2), rgba(16, 185, 129, 0.2)); border-radius: 8px; padding: 12px; text-align: center;">
+                        <p style="font-size: 14px; margin-bottom: 4px;">🔥</p>
+                        <p style="font-size: 11px;">Viral Boom</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              
+              <!-- PROFILE TAB -->
+              <section id="tab-profile" class="app-tab">
+                <div>
+                  <div class="studio-card">
+                    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+                      <div style="width: 48px; height: 48px; background: linear-gradient(135deg, var(--primary-accent), var(--accent-cyan)); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 16px;">OC</div>
+                      <div>
+                        <h3 style="font-size: 14px; margin-bottom: 2px;">OmniClip Studio</h3>
+                        <p style="font-size: 11px; color: var(--text-muted);">Engagement: 14.8%</p>
+                      </div>
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-bottom: 16px; text-align: center;">
+                      <div style="padding: 8px;">
+                        <p style="font-size: 14px; font-weight: 600; margin-bottom: 2px;">12</p>
+                        <p style="font-size: 10px; color: var(--text-muted);">Posts</p>
+                      </div>
+                      <div style="padding: 8px; border-left: 1px solid var(--border-color); border-right: 1px solid var(--border-color);">
+                        <p style="font-size: 14px; font-weight: 600; margin-bottom: 2px;">48.2K</p>
+                        <p style="font-size: 10px; color: var(--text-muted);">Followers</p>
+                      </div>
+                      <div style="padding: 8px;">
+                        <p style="font-size: 14px; font-weight: 600; margin-bottom: 2px;">840</p>
+                        <p style="font-size: 10px; color: var(--text-muted);">Following</p>
+                      </div>
+                    </div>
+                    
+                    <button class="primary-btn">Upload New Reel</button>
+                  </div>
+                </div>
+              </section>
+              
+            </main>
+            
+            <!-- Sticky Bottom Navigation -->
+            <nav class="bottom-nav">
+              <button class="nav-item active" data-tab="editor">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
+                <span>Editor</span>
+              </button>
+              <button class="nav-item" data-tab="hooks">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.21 15.89A10 10 0 1 0 8.11 2.69"></path></svg>
+                <span>Hooks</span>
+              </button>
+              <button class="nav-item" data-tab="captions">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                <span>Captions</span>
+              </button>
+              <button class="nav-item" data-tab="templates">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                <span>Templates</span>
+              </button>
+              <button class="nav-item" data-tab="profile">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                <span>Profile</span>
+              </button>
+            </nav>
+            
+            <!-- Home Bar -->
+            <div class="home-indicator"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+  <!-- JavaScript for Navigation -->
+  <script>
+    // Update status time
+    function updateTime() {
+      const now = new Date();
+      document.getElementById('statusTime').textContent = now.toLocaleTimeString('en-US', { 
+        hour: '2-digit', 
+        minute: '2-digit',
+        hour12: false 
+      });
+    }
+    updateTime();
+    setInterval(updateTime, 60000);
+
+    // Tab navigation
+    document.querySelectorAll('.nav-item').forEach(button => {
+      button.addEventListener('click', () => {
+        const tabName = button.getAttribute('data-tab');
+        
+        // Hide all tabs
+        document.querySelectorAll('.app-tab').forEach(tab => {
+          tab.classList.remove('active');
+        });
+        
+        // Remove active from nav items
+        document.querySelectorAll('.nav-item').forEach(item => {
+          item.classList.remove('active');
+        });
+        
+        // Show selected tab and highlight nav item
+        document.getElementById(`tab-${tabName}`).classList.add('active');
+        button.classList.add('active');
+      });
+    });
+
+    // Side panel feature item clicks
+    document.querySelectorAll('.feature-item').forEach(item => {
+      item.addEventListener('click', () => {
+        const tabName = item.getAttribute('data-tab');
+        document.querySelector(`[data-tab="${tabName}"]`).click();
+      });
+    });
+  </script>
+
+</body>
+</html>
